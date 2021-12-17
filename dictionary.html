@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển VIỆT - ANH</title>
+</head>
+<body>
+<input type="text" id="word" placeholder="nhập từ tìm kiếm">
+<button onclick="dich()" >Dịch</button>
+<p id="result" ></p>
+<script>
+    function dich() {
+        let eng = ['left', 'right', 'up', 'down'];
+        let vie = ['trái', 'phải', 'lên', 'xuống'];
+        let word = document.getElementById("word").value;
+        let index = -1
+        for (i = 0; i < 4; i++) {
+            if (eng[i] == word) {
+                index = i
+                break;
+            }
+        }
+        console.log(eng[index], vie[index]);
+        if (index == -1) {
+            alert("not found")
+            document.getElementById("result").innerHTML = '';
+        } else {
+            document.getElementById("result").innerHTML = vie[index];
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
